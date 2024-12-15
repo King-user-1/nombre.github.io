@@ -1,43 +1,49 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mi Página Web</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f9;
-            color: #333;
-        }
-        header {
-            background-color: #007BFF;
-            color: white;
-            padding: 20px;
-        }
-        main {
-            padding: 20px;
-        }
-        footer {
-            background-color: #333;
-            color: white;
-            padding: 10px;
-            font-size: 14px;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mi Página Web</title>
+  <!-- Enlazar el CSS -->
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <h1>Bienvenido a mi página web</h1>
-    </header>
-    <main>
-        <p>Hola, esta es mi página web creada con HTML y alojada gratis.</p>
-    </main>
-    <footer>
-        © 2024 Mi Página Web. Todos los derechos reservados.
-    </footer>
+  <!-- Encabezado de la página -->
+  <header>
+    <h1>Bienvenido a Mi Página Web</h1>
+    <nav>
+      <ul>
+        <li><a href="#inicio">Inicio</a></li>
+        <li><a href="#productos">Productos</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Contenido principal -->
+  <main>
+    <section id="inicio">
+      <h2>Inicio</h2>
+      <p>Esta es una página de ejemplo. Empezamos con lo básico.</p>
+    </section>
+
+    <section id="productos">
+      <h2>Nuestros Productos</h2>
+      <p>Pronto encontrarás nuestros mejores productos aquí.</p>
+    </section>
+
+    <section id="contacto">
+      <h2>Contacto</h2>
+      <p>Puedes contactarnos al correo: ejemplo@correo.com</p>
+    </section>
+  </main>
+
+  <!-- Pie de página -->
+  <footer>
+    <p>&copy; 2024 Mi Página Web - Todos los derechos reservados.</p>
+  </footer>
+
+  <!-- Enlazar el JavaScript -->
+  <script src="script.js"></script>
 </body>
 </html>
