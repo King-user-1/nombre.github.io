@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalle del Producto</title>
+    <link rel="stylesheet" href="../assets/css/styles.css">
+    <link rel="stylesheet" href="../assets/css/responsive.css">
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.min.css">
+</head>
+<body>
+    <div id="header"></div>
+    <div class="producto-page-container">
+        <section id="producto-detalle" class="producto-detalle">
+            <div class="columna-imagenes">
+                <div id="producto-imagenes" class="producto-imagenes"></div>
+            </div>
+            <div class="columna-info">
+                <div id="producto-info" class="producto-info"></div>
+            </div>
+        </section>
+        <section id="producto-descripcion" class="producto-descripcion">
+            <h3>Cargando descripción...</h3>
+        </section>
+    </div>
+
+    <div id="popup-form" class="popup">
+        <div class="popup-content">
+            <h3>Reservar Producto</h3>
+            <form id="form-reserva" onsubmit="enviarFormulario(event)">
+                <!-- Campos del formulario -->
+                <label for="nombre">Nombre y Apellido Completo *</label>
+                <input type="text" id="nombre" required pattern="^[A-Za-zÁÉÍÓÚáéíóúñÑ ]+$">
+                <label for="dni">DNI *</label>
+                <input type="text" id="dni" required pattern="\d{8}" title="Debe ingresar exactamente 8 dígitos">
+                <label for="whatsapp">WhatsApp *</label>
+                <input type="text" id="whatsapp" required pattern="^\+51\d{9}$|^51\d{9}$|^\d{9}$">
+                <label for="provincia">Provincia *</label>
+                <input type="text" id="provincia" required>
+                <label for="distrito">Distrito *</label>
+                <input type="text" id="distrito" required>
+                <label for="agencia">Agencia Shalom más cercana *</label>
+                <input type="text" id="agencia" required>
+                <div>
+                 <input type="checkbox" id="terminos" required>
+                 <label for="terminos">Aceptar términos y condiciones</label>
+                </div>
+                <button type="submit">Reservar Pedido</button>
+            </form>
+            <button class="cerrar-popup" onclick="cerrarPopup()">Cerrar</button>
+        </div>
+    </div>
+
+    <div id="footer"></div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.min.js"></script>
+    <script src="../assets/js/producto.js"></script>
+    <script src="../assets/js/main.js" defer></script>
+</body>
+</html>
+

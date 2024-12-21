@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrito de Compras</title>
+    <link rel="stylesheet" href="../assets/css/styles.css">
+    <link rel="stylesheet" href="../assets/css/responsive.css">
+</head>
+<body>
+    <!-- Header -->
+    <div id="header"></div>
+
+    <!-- Contenido Principal -->
+    <main>
+        <h1>Tu Carrito</h1>
+        <section id="carrito-container">
+            <!-- Aquí se mostrarán los productos del carrito dinámicamente -->
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <div id="footer"></div>
+
+    <!-- Scripts -->
+    <script src="../assets/js/carrito.js"></script>
+    <script src="../assets/js/main.js"></script>
+    <script>
+        // Mostrar el carrito al cargar la página
+        document.addEventListener("DOMContentLoaded", () => {
+            const carritoContainer = document.getElementById("carrito-container"); // Contenedor principal
+            const carrito = JSON.parse(localStorage.getItem('carrito')) || []; // Obtener carrito del Local Storage
+
+            console.log("Contenido del carrito:", carrito); // Verificar si los productos están en Local Storage
+
+            if (carrito.length === 0) {
+                carritoContainer.innerHTML = "<p>Tu carrito está vacío.</p>";
+            } else {
+                let total = 0;
+                carrito.forEach(producto => {
+                    const item = `
+                        <div class="producto-carrito" style="display: flex; align-items: center; margin-bottom: 10px;">
+                            <img src="${producto.imagen}" alt="${producto.nombre}" width="100" style="margin-right: 15px;">
+                            <div>
+                                <h3>${producto.nombre}</h3>
+                                <p>Precio: $${producto.precio}</p>
+                            </div>
+                        </div>
+                    `;
+                    carritoContainer.insertAdjacentHTML('beforeend', item);
+                    total += producto.precio; // Sumar precios
+                });
+
+                carritoContainer.insertAdjacentHTML('beforeend', `
+                    <h3 style="text-align: right; margin-top: 20px;">Total: $${total.toFixed(2)}</h3>
+                `);
+            }
+        });
+    </script>
+</body>
+</html>
+

@@ -1,49 +1,46 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mi Página Web</title>
-  <!-- Enlazar el CSS -->
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Tienda - Home</title>
+    <link rel="stylesheet" href="../assets/css/styles.css">
+    <link rel="stylesheet" href="../assets/css/responsive.css">
 </head>
 <body>
-  <!-- Encabezado de la página -->
-  <header>
-    <h1>Bienvenido a Mi Página Web</h1>
-    <nav>
-      <ul>
-        <li><a href="#inicio">Inicio</a></li>
-        <li><a href="#productos">Productos</a></li>
-        <li><a href="#contacto">Contacto</a></li>
-      </ul>
-    </nav>
-  </header>
+    <!-- Header -->
+    <div id="header"></div>
 
-  <!-- Contenido principal -->
-  <main>
-    <section id="inicio">
-      <h2>Inicio</h2>
-      <p>Esta es una página de ejemplo. Empezamos con lo básico.</p>
-    </section>
+    <!-- Contenido Principal -->
+    <main>
+        <section class="hero">
+            <h1>Bienvenido a Nuestra Tienda</h1>
+            <p>Descubre los mejores productos al mejor precio.</p>
+            <a href="catalogo.html" class="btn">Ver Catálogo</a>
+        </section>
+    </main>
 
-    <section id="productos">
-      <h2>Nuestros Productos</h2>
-      <p>Pronto encontrarás nuestros mejores productos aquí.</p>
-    </section>
+    <!-- Footer -->
+    <div id="footer"></div>
 
-    <section id="contacto">
-      <h2>Contacto</h2>
-      <p>Puedes contactarnos al correo: ejemplo@correo.com</p>
-    </section>
-  </main>
+    <!-- Scripts -->
+    <script src="../assets/js/main.js" defer></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            // Cargar el header en el contenedor con ID "header"
+            fetch("templates/header.html")
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById("header").innerHTML = data;
+                });
 
-  <!-- Pie de página -->
-  <footer>
-    <p>&copy; 2024 Mi Página Web - Todos los derechos reservados.</p>
-  </footer>
-
-  <!-- Enlazar el JavaScript -->
-  <script src="script.js"></script>
+            // Cargar el footer en el contenedor con ID "footer"
+            fetch("templates/footer.html")
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById("footer").innerHTML = data;
+                });
+        });
+    </script>
 </body>
 </html>
